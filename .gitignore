@@ -1,0 +1,28 @@
+# Logs
+bazar-universal/logs
+bazar-universal/*.log
+bazar-universal/npm-debug.log*
+bazar-universal/yarn-debug.log*
+bazar-universal/yarn-error.log*
+bazar-universal/pnpm-debug.log*
+bazar-universal/lerna-debug.log*
+
+bazar-universal/node_modules
+bazar-universal/dist
+bazar-universal/dist-ssr
+bazar-universal/*.local
+service-bazar/node_modules
+service-bazar/dist
+service-bazar/dist-ssr
+service-bazar/*.local
+
+# Editor directories and files
+bazar-universal/.vscode/*
+bazar-universal/!.vscode/extensions.json
+bazar-universal/.idea
+bazar-universal/.DS_Store
+bazar-universal/*.suo
+bazar-universal/*.ntvs*
+bazar-universal/*.njsproj
+bazar-universal/*.sln
+bazar-universal/*.sw?
