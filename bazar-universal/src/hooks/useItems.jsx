@@ -8,9 +8,9 @@ const useFetchItems = (query) => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/items?q=${query}`);
+        const response = await fetch(`https://service-bazar.onrender.com/api/items?q=${query}`);
         const data = await response.json();
-        console.log(`${data.length} results found`);  // Muestra el número de resultados encontrados
+        console.log(`${data.length} results found`);
         setItems(data);
       } catch (err) {
         setError('Error fetching data');

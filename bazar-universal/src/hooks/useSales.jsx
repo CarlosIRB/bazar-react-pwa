@@ -7,9 +7,9 @@ const useSales = () => {
 
   const fetchSales = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/Sales`);
+      const response = await fetch(`https://service-bazar.onrender.com/api/Sales`);
       const data = await response.json();
-      console.log(`${data.length} results found`); // Muestra el número de resultados encontrados
+      console.log(`${data.length} results found`);
       setSales(data);
     } catch (err) {
       setError("Error fetching data");

@@ -2,7 +2,6 @@ import { PropTypes } from "prop-types";
 import styled from "styled-components";
 import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
 
-// Contenedor principal de la tarjeta de producto
 const CardContainer = styled.div`
   display: flex;
   align-items: center;
@@ -15,7 +14,6 @@ const CardContainer = styled.div`
   margin: 1rem auto;
 `;
 
-// Imagen del producto
 const ProductImage = styled.img`
   width: 80px;
   height: 80px;
@@ -24,14 +22,12 @@ const ProductImage = styled.img`
   margin-right: 15px;
 `;
 
-// Contenedor de la información del producto
 const ProductInfo = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
 `;
 
-// Título del producto
 const ProductTitle = styled.h2`
   font-size: 1rem;
   margin: 0;
@@ -39,14 +35,12 @@ const ProductTitle = styled.h2`
   font-weight: bold;
 `;
 
-// Descripción y categoría del producto
 const ProductDescription = styled.p`
   font-size: 0.8rem;
   color: #666;
   margin: 5px 0;
 `;
 
-// Precio del producto
 const ProductPrice = styled.p`
   font-size: 1rem;
   font-weight: bold;
@@ -54,7 +48,6 @@ const ProductPrice = styled.p`
   margin: 5px 0;
 `;
 
-// Categoría del producto
 const ProductCategory = styled.span`
   font-size: 0.8rem;
   color: #888;
@@ -67,20 +60,17 @@ const ProductGroup = styled.div`
   justify-content: space-between;
 `;
 
-// Contenedor de la puntuación en estrellas
 const RatingContainer = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 2px;
 `;
 
-// Estrella activa
 const StarIcon = styled(FaStar)`
   color: #ffd700; /* Color dorado para la estrella activa */
   font-size: 0.8rem;
 `;
 
-// Estrella vacía
 const EmptyStarIcon = styled(FaRegStar)`
   color: #ddd; /* Color gris para la estrella vacía */
   font-size: 0.8rem;
@@ -100,10 +90,9 @@ const TarjetaProducto = ({
   image,
   rating,
 }) => {
-  // Función para renderizar las estrellas con media estrella si hay decimales
   const renderStars = () => {
     const stars = [];
-    var fullStars = Math.floor(rating); // Estrellas completas
+    var fullStars = Math.floor(rating);
     var hasHalfStar = false;
     if (rating % 1 >= 0.2 && rating % 1 <= 0.7) {
       hasHalfStar = true;
@@ -113,17 +102,14 @@ const TarjetaProducto = ({
       fullStars++;
     }
 
-    // Añadir estrellas completas
     for (let i = 0; i < fullStars; i++) {
       stars.push(<StarIcon key={i} />);
     }
 
-    // Añadir media estrella si aplica
     if (hasHalfStar) {
       stars.push(<HalfStarIcon key="half" />);
     }
 
-    // Añadir estrellas vacías hasta completar 5
     while (stars.length < 5) {
       stars.push(<EmptyStarIcon key={stars.length} />);
     }
@@ -133,10 +119,8 @@ const TarjetaProducto = ({
 
   return (
     <CardContainer onClick={onClick}>
-      {/* Imagen del producto */}
       <ProductImage src={image} alt={title} />
 
-      {/* Información del producto */}
       <ProductInfo>
         <ProductGroup>
           <ProductTitle>{title}</ProductTitle>
@@ -148,8 +132,6 @@ const TarjetaProducto = ({
           <ProductPrice>${price}</ProductPrice>
           <RatingContainer>{renderStars()}</RatingContainer>
         </ProductGroup>
-
-        {/* Puntuación en estrellas */}
       </ProductInfo>
     </CardContainer>
   );

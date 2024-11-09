@@ -3,14 +3,12 @@ import styled from "styled-components";
 import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
 import { useState } from "react";
 
-// Contenedor principal del detalle del producto
 const ProductDetailContainer = styled.div`
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 `;
 
-// Título del producto
 const ProductTitle = styled.h1`
   font-size: 1.8rem;
   color: #333;
@@ -18,7 +16,6 @@ const ProductTitle = styled.h1`
   margin-bottom: 10px;
 `;
 
-// Precio del producto
 const ProductPrice = styled.p`
   font-size: 1.5rem;
   color: #ff6347;
@@ -26,7 +23,6 @@ const ProductPrice = styled.p`
   margin: 10px 0;
 `;
 
-// Descripción completa del producto
 const ProductDescription = styled.p`
   font-size: 1rem;
   color: #555;
@@ -35,7 +31,6 @@ const ProductDescription = styled.p`
   margin-bottom: 15px;
 `;
 
-// Información adicional (marca, stock, categoría)
 const ProductInfo = styled.div`
   font-size: 0.9rem;
   color: #777;
@@ -45,7 +40,6 @@ const ProductInfo = styled.div`
   gap: 5px;
 `;
 
-// Contenedor de la galería de imágenes
 const ImageGallery = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -53,7 +47,6 @@ const ImageGallery = styled.div`
   margin-top: 15px;
 `;
 
-// Imágenes individuales
 const ProductImage = styled.img`
   width: 100px;
   height: 100px;
@@ -61,7 +54,6 @@ const ProductImage = styled.img`
   object-fit: cover;
 `;
 
-// Botón de compra
 const BuyButton = styled.button`
   background-color: #ff6347;
   color: #fff;
@@ -76,20 +68,17 @@ const BuyButton = styled.button`
   }
 `;
 
-// Contenedor para la puntuación en estrellas
 const RatingContainer = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 2px;
 `;
 
-// Estrella activa
 const StarIcon = styled(FaStar)`
   color: #ffd700;
   font-size: 0.8rem;
 `;
 
-// Estrella vacía
 const EmptyStarIcon = styled(FaRegStar)`
   color: #ddd;
   font-size: 0.8rem;
@@ -100,7 +89,6 @@ const HalfStarIcon = styled(FaStarHalfAlt)`
   font-size: 0.8rem;
 `;
 
-// Estilo del modal
 const ModalContainer = styled.div`
   position: fixed;
   top: 0;
@@ -159,7 +147,6 @@ const ProductGroup = styled.div`
   justify-content: space-between;
 `;
 
-// Componente DetalleProducto
 const DetalleProducto = ({
   id,
   title,
@@ -177,7 +164,7 @@ const DetalleProducto = ({
 
   const renderStars = () => {
     const stars = [];
-    var fullStars = Math.floor(rating); // Estrellas completas
+    var fullStars = Math.floor(rating);
     var hasHalfStar = false;
     if (rating % 1 >= 0.2 && rating % 1 <= 0.7) {
       hasHalfStar = true;
@@ -187,17 +174,14 @@ const DetalleProducto = ({
       fullStars++;
     }
 
-    // Añadir estrellas completas
     for (let i = 0; i < fullStars; i++) {
       stars.push(<StarIcon key={i} />);
     }
 
-    // Añadir media estrella si aplica
     if (hasHalfStar) {
       stars.push(<HalfStarIcon key="half" />);
     }
 
-    // Añadir estrellas vacías hasta completar 5
     while (stars.length < 5) {
       stars.push(<EmptyStarIcon key={stars.length} />);
     }
@@ -249,7 +233,6 @@ const DetalleProducto = ({
       </ProductGroup>
       <BuyButton onClick={handleBuyClick}>Comprar</BuyButton>
 
-      {/* Modal de cantidad */}
       {showModal && (
         <ModalContainer>
           <ModalContent>
@@ -267,9 +250,7 @@ const DetalleProducto = ({
             >
               Confirmar compra
             </ConfirmButton>
-            <DismissButton
-              onClick={() => setShowModal(false)}
-            >
+            <DismissButton onClick={() => setShowModal(false)}>
               Cancelar
             </DismissButton>
           </ModalContent>
@@ -279,7 +260,6 @@ const DetalleProducto = ({
   );
 };
 
-// Definición de PropTypes
 DetalleProducto.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,

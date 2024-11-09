@@ -1,7 +1,6 @@
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import PropTypes from "prop-types";
+import styled from "styled-components";
 
-// Contenedor principal de la tarjeta de compra
 const PurchaseCardContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -13,7 +12,6 @@ const PurchaseCardContainer = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
 
-// Texto principal (ID del producto)
 const ProductId = styled.h3`
   font-size: 1rem;
   color: #333;
@@ -21,14 +19,12 @@ const ProductId = styled.h3`
   font-weight: bold;
 `;
 
-// Detalle de la compra
 const PurchaseDetail = styled.p`
   font-size: 0.9rem;
   color: #555;
   margin: 3px 0;
 `;
 
-// Precio total
 const TotalAmount = styled.p`
   font-size: 1rem;
   font-weight: bold;
@@ -49,7 +45,6 @@ const TarjetaCompra = ({ productId, date, quantity, total, name }) => {
   );
 };
 
-// Definición de PropTypes
 TarjetaCompra.propTypes = {
   productId: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,

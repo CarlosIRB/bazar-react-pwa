@@ -1,7 +1,7 @@
 const useSale = () => {
   const addSale = async ({ productId, quantity }) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/addSale`, {
+      const response = await fetch(`https://service-bazar.onrender.com/api/addSale`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -7,7 +7,7 @@ const useFetchItem = (id) => {
 
   const fetchItem = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/item/${id}`);
+      const response = await fetch(`https://service-bazar.onrender.com/api/item/${id}`);
       if (!response.ok) {
         throw new Error("Producto no encontrado");
       }

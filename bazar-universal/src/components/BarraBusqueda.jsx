@@ -3,7 +3,6 @@ import { FaSearch } from "react-icons/fa"; // Icono de lupa
 import PropTypes from "prop-types";
 import { useState } from "react";
 
-// Contenedor principal para el componente
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -14,7 +13,6 @@ const Container = styled.div`
   transition: height 0.5s ease;
 `;
 
-// Estilo para la imagen
 const LogoImage = styled.img`
   width: 120px;
   height: 120px;
@@ -23,7 +21,6 @@ const LogoImage = styled.img`
   transition: height 0.5s ease;
 `;
 
-// Título de la aplicación
 const AppTitle = styled.h1`
   font-size: 2rem;
   color: #333;
@@ -32,7 +29,6 @@ const AppTitle = styled.h1`
   transition: height 0.5s ease;
 `;
 
-// Contenedor para el campo de búsqueda
 const SearchContainer = styled.div`
   display: flex;
   align-items: center;
@@ -45,7 +41,6 @@ const SearchContainer = styled.div`
   transition: height 0.5s ease;
 `;
 
-// Estilo del icono de la lupa
 const SearchIcon = styled(FaSearch)`
   color: #aaa;
   margin-right: 10px;
@@ -53,7 +48,6 @@ const SearchIcon = styled(FaSearch)`
   transition: height 0.5s ease;
 `;
 
-// Estilo del input de búsqueda
 const SearchInput = styled.input`
   border: none;
   outline: none;
@@ -70,7 +64,6 @@ const SearchInput = styled.input`
   }
 `;
 
-// Estilo del botón
 const SearchButton = styled.button`
   background-color: #ffd700;
   color: #fff;
@@ -88,7 +81,6 @@ const SearchButton = styled.button`
 `;
 
 const BarraBusqueda = ({ onSearch, amplio }) => {
-
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearchClick = () => {
@@ -116,7 +108,7 @@ const BarraBusqueda = ({ onSearch, amplio }) => {
           <AppTitle amplio={amplio}>Bazar Online</AppTitle>
         </>
       )}
-      {/* Input de búsqueda con icono de lupa */}
+
       <SearchContainer amplio={amplio}>
         <SearchIcon onClick={handleSearchClick} />
         <SearchInput
@@ -126,8 +118,6 @@ const BarraBusqueda = ({ onSearch, amplio }) => {
           onChange={handleInputChange}
         />
       </SearchContainer>
-
-      {/* Botón de búsqueda, ocultar si amplio es false */}
 
       {amplio && (
         <SearchButton amplio={amplio} onClick={handleSearchClick}>

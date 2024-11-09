@@ -1,8 +1,6 @@
-
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-// Estilos del contenedor de la barra de navegación
 const NavbarContainer = styled.nav`
   display: flex;
   align-items: center;
@@ -15,14 +13,12 @@ const NavbarContainer = styled.nav`
   z-index: 1000;
 `;
 
-// Estilo del logo y los enlaces
 const LogoContainer = styled.div`
   display: flex;
   align-items: center;
   margin-left: 1rem;
 `;
 
-// Estilo para la imagen del logo
 const LogoImage = styled.img`
   width: 40px;
   height: 40px;
@@ -30,7 +26,6 @@ const LogoImage = styled.img`
 `;
 
 const ModuleLinks = styled.div`
-
   margin-right: 0rem;
 `;
 const NavLink = styled(Link)`
@@ -47,8 +42,6 @@ const NavLink = styled(Link)`
 const Navbar = () => {
   return (
     <NavbarContainer>
-      {/* Logo con imagen personalizada */}
-
       <NavLink to="/">
         <LogoContainer>
           <LogoImage
